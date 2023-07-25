@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971623585311",
+    "project_id": "lashapp-e948e",
+    "storage_bucket": "lashapp-e948e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971623585311:android:c146f8db5c0c14437ba72a",
+        "android_client_info": {
+          "package_name": "com.example.lash_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971623585311-hk2cbd9g5dpi7oh8dkgfaickomjdhal2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnUGhMoa-NUdV5z-b6UO_1D1vn2lRT3YQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971623585311-hk2cbd9g5dpi7oh8dkgfaickomjdhal2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

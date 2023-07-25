@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>971623585311-mv1fjrmu62c18jh51e92lhvhocl31u4m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.971623585311-mv1fjrmu62c18jh51e92lhvhocl31u4m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAxRc0VL_xwg0FOHr8fqqV-XgMV_e427fs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>971623585311</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.lashApp</string>
+	<key>PROJECT_ID</key>
+	<string>lashapp-e948e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lashapp-e948e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:971623585311:ios:36165d8e73da2ec37ba72a</string>
+</dict>
+</plist>
