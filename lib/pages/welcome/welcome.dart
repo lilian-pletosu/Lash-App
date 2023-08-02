@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lash_app/util/colors.dart';
 
 import 'bloc/welcome_bloc.dart';
 
@@ -42,21 +43,21 @@ class _WelcomeState extends State<Welcome> {
                           'Next',
                           'Welcome',
                           'Adipisicing officia deserunt magna aliquip et.',
-                          'assets/images/logo_lash.png'),
+                          'assets/images/sogo.png'),
                       _page(
                           2,
                           context,
                           'Next',
                           'Second page',
                           'Adipisicing officia deserunt magna aliquip et.',
-                          'assets/images/logo_lash.png'),
+                          'assets/images/sogo.png'),
                       _page(
                           3,
                           context,
                           'Start',
                           'Third page',
                           'Adipisicing officia deserunt magna aliquip et.',
-                          'assets/images/logo_lash.png'),
+                          'assets/images/sogo.png'),
                     ],
                   ),
                   Positioned(
@@ -66,8 +67,8 @@ class _WelcomeState extends State<Welcome> {
                         dotsCount: 3,
                         mainAxisAlignment: MainAxisAlignment.center,
                         decorator: DotsDecorator(
-                            color: Colors.grey,
-                            activeColor: Colors.blue,
+                            color: AppColors.primaryThirdElementText,
+                            activeColor: AppColors.primaryElement,
                             size: const Size.square(8.0),
                             activeSize: const Size(18.0, 8.0),
                             activeShape: RoundedRectangleBorder(
@@ -97,7 +98,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             title,
             style: TextStyle(
-                color: Colors.black,
+                color: AppColors.primaryText,
                 fontSize: 24.sp,
                 fontWeight: FontWeight.normal),
           ),
@@ -106,7 +107,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             subTitle,
             style: TextStyle(
-                color: Colors.black.withOpacity(0.5),
+                color: AppColors.primarySecondaryElementText,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.normal),
           ),
@@ -127,7 +128,7 @@ class _WelcomeState extends State<Welcome> {
             width: 325.w,
             height: 50.5,
             decoration: BoxDecoration(
-                color: Colors.blue,
+                color: AppColors.primaryElement,
                 borderRadius: BorderRadius.all(Radius.circular(15.w)),
                 boxShadow: [
                   BoxShadow(
