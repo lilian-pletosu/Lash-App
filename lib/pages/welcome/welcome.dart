@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lash_app/util/colors.dart';
+import 'package:lash_app/common/values/colors.dart';
+import 'package:lash_app/common/values/constants.dart';
+import 'package:lash_app/global.dart';
 
 import 'bloc/welcome_bloc.dart';
 
@@ -119,8 +121,10 @@ class _WelcomeState extends State<Welcome> {
                   duration: Duration(milliseconds: 500), curve: Curves.linear);
             } else {
               // jump to a new page
+              Global.storageService
+                  .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil('signIn', (route) => false);
+                  .pushNamedAndRemoveUntil('/sign_in', (route) => false);
             }
           },
           child: Container(

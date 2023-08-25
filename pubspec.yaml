@@ -43,6 +43,8 @@ dependencies:
   flutter_screenutil: ^5.8.4
   dots_indicator:
   intl:
+  fluttertoast: 
+  shared_preferences: 
 
 
 

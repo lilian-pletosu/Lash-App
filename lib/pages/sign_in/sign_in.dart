@@ -66,8 +66,7 @@ class _SignInState extends State<SignIn> {
                       SignInController(context: context).handleSignIn('email');
                     }),
                     buildLogInAndRegisterButton('Register', 'register', () {
-                      print('register button');
-                      print('email: ${state.email}');
+                      Navigator.of(context).pushNamed('/register');
                     }),
                   ],
                 ),

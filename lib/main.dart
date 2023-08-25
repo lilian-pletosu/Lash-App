@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lash_app/pages/sign_in/bloc/sign_in_bloc.dart';
-import 'package:lash_app/pages/sign_in/sign_in.dart';
-import 'package:lash_app/pages/welcome/bloc/welcome_bloc.dart';
+import 'package:lash_app/common/routes/routes.dart';
+import 'package:lash_app/global.dart';
 import 'package:lash_app/pages/welcome/welcome.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lash_app/common/values/colors.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
+  await Global.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,17 +20,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => WelcomeBloc(),
-        ),
-        BlocProvider(create: (context) => SignInBloc()),
-      ],
+      providers: [...AppPages.allBlocProviders(context)],
       child: ScreenUtilInit(
+        designSize: const Size(375, 812),
         builder: (context, child) => MaterialApp(
+          theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+                  elevation: 0,
+                  backgroundColor: Colors.white,
+                  iconTheme: IconThemeData(color: AppColors.primaryText))),
           debugShowCheckedModeBanner: false,
           home: const Welcome(),
-          routes: {'signIn': (context) => const SignIn()},
+          onGenerateRoute: AppPages.generateRouteSettings,
         ),
       ),
     );
