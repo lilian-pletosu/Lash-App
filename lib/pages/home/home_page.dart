@@ -47,7 +47,21 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SliverToBoxAdapter(
                   child: menuView(),
-                )
+                ),
+                SliverPadding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 18.h, horizontal: 0.w)),
+                SliverList(
+                    delegate: SliverChildBuilderDelegate(childCount: 4,
+                        (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 15.h),
+                    child: GestureDetector(
+                      onTap: () => print('Index is: $index'),
+                      child: appoimentsList(),
+                    ),
+                  );
+                }))
               ],
             ),
           );

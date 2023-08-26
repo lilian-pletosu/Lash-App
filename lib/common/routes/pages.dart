@@ -8,6 +8,8 @@ import 'package:lash_app/pages/application/application_page.dart';
 import 'package:lash_app/pages/application/bloc/app_bloc.dart';
 import 'package:lash_app/pages/home/bloc/home_page_bloc.dart';
 import 'package:lash_app/pages/home/home_page.dart';
+import 'package:lash_app/pages/profile/settings/bloc/settings_bloc.dart';
+import 'package:lash_app/pages/profile/settings/settings_page.dart';
 import 'package:lash_app/pages/register/bloc/register_bloc.dart';
 import 'package:lash_app/pages/sign_in/bloc/sign_in_bloc.dart';
 import 'package:lash_app/pages/sign_in/sign_in.dart';
@@ -48,7 +50,13 @@ class AppPages {
           page: const HomePage(),
           bloc: BlocProvider(
             create: (_) => HomePageBloc(),
-          ))
+          )),
+      PageEntity(
+          route: AppRoutes.SETTINGS,
+          page: const SettingsPage(),
+          bloc: BlocProvider(
+            create: (_) => SettingsBloc(),
+          )),
     ];
   }
 

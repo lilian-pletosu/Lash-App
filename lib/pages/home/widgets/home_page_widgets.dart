@@ -228,3 +228,107 @@ Widget _reusableMenuText(String text,
         color: textColor, fontWeight: FontWeight.normal, fontSize: 12),
   );
 }
+
+// Appoiments lists
+Widget appoimentsList() {
+  return Container(
+    decoration: BoxDecoration(
+      gradient: const LinearGradient(tileMode: TileMode.clamp, colors: [
+        // Color(0xffe9b7ce),
+        // Color(0xffd3f3f1),
+        Color(0xfff9cdc3),
+        Color(0xfffacefb),
+      ]),
+      borderRadius: BorderRadius.circular(15.w),
+    ),
+    width: 325.w,
+    height: 120.h,
+    child: Padding(
+      padding: EdgeInsets.all(10.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.access_time_rounded),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Text(
+                    'Aug 25, 12:00PM',
+                    style: TextStyle(color: AppColors.primaryThirdElementText),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(Icons.face_3_rounded),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Text(
+                    'Alina Georgiu',
+                    style: TextStyle(
+                        color: AppColors.primaryText.withOpacity(0.7),
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.normal),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Image.asset('assets/icons/lash_icon.png',
+                      color: Colors.black),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Text('2D, Păpușă')
+                ],
+              ),
+            ],
+          ),
+          VerticalDivider(
+            width: 10.w,
+          ),
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+                // color: AppColors.primaryBackground,
+                color: Colors.white.withOpacity(0.9),
+                // border: Border.all(width: .2),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 3,
+                      spreadRadius: 1,
+                      offset: Offset(0, 1)),
+                ],
+                borderRadius: BorderRadius.circular(50)),
+            child: Center(
+              child: Container(
+                  width: 25,
+                  height: 25,
+                  // child: Icon(
+                  //   // Icons.check,
+                  //   // Icons.sentiment_dissatisfied_outlined,
+                  //   // color: Colors.gren,
+                  //   // color: Colors.amber[700],
+                  //   color: Colors.red,
+                  //   size: 35,
+                  // ),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/icons/cancel_icon.png')))),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
