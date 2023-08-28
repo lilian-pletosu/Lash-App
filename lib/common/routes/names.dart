@@ -11,4 +11,6 @@ class AppRoutes {
   static const HOME_PAGE = '/home';
   // for settings of the app
   static const SETTINGS = '/settings';
+  // calendat page
+  static const CALENDAR = '/calendar';
 }

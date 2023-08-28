@@ -31,4 +31,13 @@ class AppColors {
   static const Color primaryElementStatus = Color.fromARGB(255, 88, 174, 127);
 
   static const Color primaryElementBg = Color.fromARGB(255, 238, 121, 99);
+
+  // main bg color for appointmnet widget
+  static const Color primaryAppointmentBg = Color.fromRGBO(252, 221, 236, 100);
+  static const Color primaryAppointmentStatusApproveBg =
+      Color.fromRGBO(12, 148, 0, 100);
+  static const Color primaryAppointmentStatusRevokedBg =
+      Color.fromRGBO(0, 0, 0, 100);
+  static const Color primaryAppointmentStatusCanceledBg =
+      Color.fromRGBO(243, 92, 92, 100);
 }

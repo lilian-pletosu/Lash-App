@@ -164,3 +164,16 @@ Widget buildLogInAndRegisterButton(
     ),
   );
 }
+
+Widget reusableMainText(String menuText,
+    {Color color = AppColors.primaryText,
+    int fontSize = 16,
+    FontWeight fontWeight = FontWeight.bold}) {
+  return Container(
+    child: Text(
+      menuText,
+      style: TextStyle(
+          color: color, fontWeight: fontWeight, fontSize: fontSize.sp),
+    ),
+  );
+}

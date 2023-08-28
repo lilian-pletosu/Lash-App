@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lash_app/common/service/user_service.dart';
 import 'package:lash_app/common/values/colors.dart';
 import 'package:lash_app/pages/profile/widgets/profile_widgets.dart';
 
@@ -27,6 +28,8 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(
                 height: 30.h,
               ),
+              profileName(UserService().getUsername()),
+              const Divider(),
               Padding(
                 padding: EdgeInsets.only(left: 25.w),
                 child: buildListView(context),

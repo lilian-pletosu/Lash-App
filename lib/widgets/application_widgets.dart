@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lash_app/pages/calendar/calendar_page.dart';
 import 'package:lash_app/pages/home/home_page.dart';
 import 'package:lash_app/pages/profile/profile.dart';
 
 Widget buildPage(int index) {
   List<Widget> _widget = [
     const HomePage(),
-    Center(
-      child: Text('Calendar'),
-    ),
+    const CalendarPage(),
     Center(
       child: Text('Add'),
     ),

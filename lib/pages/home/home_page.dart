@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lash_app/common/service/user_service.dart';
 import 'package:lash_app/common/values/colors.dart';
 import 'package:lash_app/pages/home/bloc/home_page_bloc.dart';
 import 'package:lash_app/pages/home/widgets/home_page_widgets.dart';
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                       color: AppColors.primaryThirdElementText, top: 10),
                 ),
                 SliverToBoxAdapter(
-                  child: homePageText('grindevalid', top: 5),
+                  child: homePageText(UserService().getUsername(), top: 5),
                 ),
                 SliverPadding(
                   padding: EdgeInsets.only(top: 20.h),

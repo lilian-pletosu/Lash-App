@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lash_app/common/routes/routes.dart';
 import 'package:lash_app/common/values/colors.dart';
+import 'package:lash_app/pages/sign_in/widgets/sign_in_widget.dart';
+
+import '../../common_widgets.dart';
 
 AppBar buildAppBar() {
   return AppBar(
@@ -50,6 +53,10 @@ Widget profileIconAndEditButton() {
       color: AppColors.primaryElement,
     ),
   );
+}
+
+Widget profileName(String username) {
+  return reusableMainText(username, color: AppColors.primaryText, fontSize: 25);
 }
 
 var imagesInfo = <String, String>{

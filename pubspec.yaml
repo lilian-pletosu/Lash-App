@@ -45,8 +45,8 @@ dependencies:
   intl:
   fluttertoast: 
   shared_preferences: 
-
-
+  calendar_timeline: 
+  jiffy: 
 
 dev_dependencies:
   flutter_test:

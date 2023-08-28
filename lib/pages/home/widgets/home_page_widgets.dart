@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lash_app/common/values/colors.dart';
+import 'package:lash_app/pages/common_widgets.dart';
 import 'package:lash_app/pages/home/bloc/home_page_bloc.dart';
 
 AppBar buildAppBar() {
@@ -173,9 +174,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _reusableText('Appointments', fontSize: 15),
+            reusableMainText('Appointments', fontSize: 15),
             GestureDetector(
-              child: _reusableText('See all',
+              child: reusableMainText('See all',
                   color: AppColors.primaryThirdElementText,
                   fontSize: 11,
                   fontWeight: FontWeight.normal),
@@ -201,19 +202,6 @@ Widget menuView() {
   );
 }
 
-Widget _reusableText(String menuText,
-    {Color color = AppColors.primaryText,
-    int fontSize = 16,
-    FontWeight fontWeight = FontWeight.bold}) {
-  return Container(
-    child: Text(
-      menuText,
-      style: TextStyle(
-          color: color, fontWeight: fontWeight, fontSize: fontSize.sp),
-    ),
-  );
-}
-
 Widget _reusableMenuText(String text,
     {Color textColor = AppColors.primaryElementText,
     Color backgroundColor = AppColors.primaryElement}) {
@@ -224,7 +212,7 @@ Widget _reusableMenuText(String text,
         borderRadius: BorderRadius.circular(7.w),
         border: Border.all(color: backgroundColor)),
     padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 5.h, bottom: 5.h),
-    child: _reusableText(text,
+    child: reusableMainText(text,
         color: textColor, fontWeight: FontWeight.normal, fontSize: 12),
   );
 }
@@ -233,100 +221,142 @@ Widget _reusableMenuText(String text,
 Widget appoimentsList() {
   return Container(
     decoration: BoxDecoration(
-      gradient: const LinearGradient(tileMode: TileMode.clamp, colors: [
-        // Color(0xffe9b7ce),
-        // Color(0xffd3f3f1),
-        Color(0xfff9cdc3),
-        Color(0xfffacefb),
-      ]),
-      borderRadius: BorderRadius.circular(15.w),
-    ),
+        color: AppColors.primaryAppointmentBg,
+        borderRadius: BorderRadius.circular(10.w),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey.withOpacity(.3),
+              spreadRadius: 0.5,
+              blurRadius: 0,
+              offset: const Offset(0, 0))
+        ]),
     width: 325.w,
-    height: 120.h,
+    // height: 140.h,
     child: Padding(
-      padding: EdgeInsets.all(10.w),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      padding: EdgeInsets.all(8.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(Icons.access_time_rounded),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Text(
-                    'Aug 25, 12:00PM',
-                    style: TextStyle(color: AppColors.primaryThirdElementText),
-                  )
-                ],
+              Container(
+                child: Row(
+                  children: [
+                    Container(
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 50.w,
+                            height: 50.h,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/icons/avatar_icon.png'))),
+                          ),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              reusableMainText("Alina Georgiu",
+                                  fontSize: 20,
+                                  color: AppColors.primaryText,
+                                  fontWeight: FontWeight.normal),
+                              reusableMainText('Oradea',
+                                  fontSize: 11, fontWeight: FontWeight.normal),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            padding: EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8)),
+                            width: 25.w,
+                            height: 25.h,
+                            child: Icon(
+                              Icons.call,
+                              size: 18.w,
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8)),
+                            width: 25.w,
+                            height: 25.h,
+                            child: Icon(Icons.sms_outlined, size: 18.w),
+                          ),
+
+                          // Icon(Icons.sms_outlined),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Icon(Icons.face_3_rounded),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Text(
-                    'Alina Georgiu',
-                    style: TextStyle(
-                        color: AppColors.primaryText.withOpacity(0.7),
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.normal),
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Image.asset('assets/icons/lash_icon.png',
-                      color: Colors.black),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Text('2D, Păpușă')
-                ],
-              ),
+              Container(
+                // margin: EdgeInsets.only(right: 5.w),
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: AppColors.primaryAppointmentStatusApproveBg),
+                child: Text(
+                  'Approve',
+                  style: TextStyle(
+                      fontSize: 11.sp,
+                      color: AppColors.primaryElementText,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
             ],
           ),
-          VerticalDivider(
-            width: 10.w,
-          ),
           Container(
-            width: 40,
-            height: 40,
+            margin: EdgeInsets.only(top: 10.h),
+            padding: EdgeInsets.all(5),
+            width: 309.w,
+            // height: 60.h,
             decoration: BoxDecoration(
-                // color: AppColors.primaryBackground,
-                color: Colors.white.withOpacity(0.9),
-                // border: Border.all(width: .2),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 3,
-                      spreadRadius: 1,
-                      offset: Offset(0, 1)),
-                ],
-                borderRadius: BorderRadius.circular(50)),
-            child: Center(
-              child: Container(
-                  width: 25,
-                  height: 25,
-                  // child: Icon(
-                  //   // Icons.check,
-                  //   // Icons.sentiment_dissatisfied_outlined,
-                  //   // color: Colors.gren,
-                  //   // color: Colors.amber[700],
-                  //   color: Colors.red,
-                  //   size: 35,
-                  // ),
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/icons/cancel_icon.png')))),
+                color: AppColors.primaryBackground,
+                borderRadius: BorderRadius.circular(5.w)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.access_time_filled_outlined),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    reusableMainText('15:00',
+                        fontSize: 20, fontWeight: FontWeight.w500)
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.clean_hands_outlined,
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    reusableMainText('Extensia genelor',
+                        fontSize: 14, fontWeight: FontWeight.normal)
+                  ],
+                ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     ),
